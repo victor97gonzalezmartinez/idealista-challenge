@@ -1,6 +1,5 @@
 # Idealista Challenge - Víctor González Martínez
 
----
 
 ## DISCLAIMER:
 
@@ -13,7 +12,6 @@
 Voy a dar por hecho que en el equipo se sigue este modelo de arquitectura hexagonal, el cual creo que está bien estructurado (he investigado).
 
 ## TESTS:
----
 Solo existe un test: `AdsServiceImplTest`. Estaría bien que `AdsController` también tenga pruebas unitarias, e incluso quizás algunas de integración.
 - `AdsServiceImplTest#23` -> El nombre de la variable debería ser "adsServiceImpl" o similar.
 - `AdsServiceImplTest#calculateScoresTest` -> El test no hace ninguna aserción. Debería, como mínimo, comprobar que los cálculos de las puntuaciones son los esperados.
