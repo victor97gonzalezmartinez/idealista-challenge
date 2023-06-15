@@ -28,13 +28,13 @@ Solo existe un test: `AdsServiceImplTest`. Estaría bien que `AdsController` tam
     - `AdVO` tiene muchos parámetros en el constructor y es posible que en el futuro crezca más. Sería bueno aplicar el patrón Builder.
     - `InMemoryPersistence` -> Entiendo que es una implementación que no saldrá a producción, así que tampoco haría foco en mejorar esta parte. Lo que sí veo útil son los métodos de mapeo de dominio a persistencia y viceversa. Esos métodos los extraería a un Adapter/Mapper para que todas las implementaciones de persistencia puedan aprovecharlos.
 - **API:**
-    - `AdsController#calculateScores()` -> Falta contexto, pero en este mismo proyecto me imagino un CRUD para los anuncios (`Ad`), y que sea en el momento de dar de alta o modificar un anuncio donde ya se calcule la puntuación. Me imagino este método utilizándose solo una vez para añadir un score a los anuncios que existan antes de la implementación de esta
-
-lógica.
-- `AdsController` -> Añadir un manejo de errores, quizás con `@ExceptionHandler` o alguna librería interna si existe.
-- `AdsController#qualityListing()` -> En realidad, este sería el endpoint para que el encargado de calidad vea los anuncios irrelevantes, así que lo renombraría a `getIrrelevantAds()` o `findIrrelevantAds()` con el path "/ads/irrelevant".
-- `AdsController#publicListing()` -> Renombrar a `getPublicAds()` o `findPublicAds()`.
-- `QualityAd` y `PublicAd` -> Para evitar repetir código, quizás se pueda crear una clase base llamada `BaseAd` con los campos comunes, y que estas dos clases la extiendan. De hecho, `PublicAd` podría ser un `BaseAd`. También podrían ser inmutables estas clases, ya que solo se van a crear instancias.
+    - `AdsController#calculateScores()` -> Falta contexto, pero en este mismo proyecto me imagino un CRUD para los anuncios (`Ad`), y que sea en el momento de dar de alta o modificar un anuncio donde ya se calcule la puntuación. Me imagino este método utilizándose solo una vez para añadir un score a los anuncios que existan antes de la implementación de esta lógica.
+    - `AdsController` -> Añadir un manejo de errores, quizás con `@ExceptionHandler` o alguna librería interna si existe.
+    - `AdsController#27` -> @PostMapping ya que modifica los anuncios en BBDD
+    - `AdsController#30` -> Usar el ok() de ResponseEntity en lugar del accepted
+    - `AdsController#qualityListing()` -> En realidad, este sería el endpoint para que el encargado de calidad vea los anuncios irrelevantes, así que lo renombraría a `getIrrelevantAds()` o `findIrrelevantAds()` con el path "/ads/irrelevant".
+    - `AdsController#publicListing()` -> Renombrar a `getPublicAds()` o `findPublicAds()`.
+    - `QualityAd` y `PublicAd` -> Para evitar repetir código, quizás se pueda crear una clase base llamada `BaseAd` con los campos comunes, y que estas dos clases la extiendan. De hecho, `PublicAd` podría ser un `BaseAd`. También podrían ser inmutables estas clases, ya que solo se van a crear instancias.
 
 ## DOMAIN:
 Quizás crearía un paquete `model` y otro `repository`. Pero todavía hay pocas clases...
