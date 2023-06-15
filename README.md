@@ -66,4 +66,5 @@ Quizás crearía un paquete `model` y otro `repository`. Pero todavía hay pocas
 - "Que el anuncio tenga un texto descriptivo suma 5 puntos" -> Necesitaría más detalles para saber qué considerar texto descriptivo y qué no. Actualmente, la aplicación suma esos 5 puntos simplemente si la descripción no está vacía. No sé si es lo que busca el cliente.
 - Límite de puntuación por fotos: Quizás habría que añadir un límite a la puntuación por fotos. Si no, con que tuvieras 30 fotos que no sean HD, sin descripción ni nada adicional, ya podrías llegar a la puntuación máxima (Hablarlo con cliente)
 
-Si tienes alguna otra pregunta o necesitas más ayuda, estaré encantado de asistirte.
+## Muchas gracias!! ##
+- Estoy muy ilusionado y me encantaría forjar carrera a largo plazo en Idealista, creo que la motivación y las ganas conducen directamente a una mejor implicación, aprendizaje y rendimiento. Y de eso no me va a faltar!
