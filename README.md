@@ -48,9 +48,7 @@ Quizás crearía un paquete `model` y otro `repository`. Pero todavía hay pocas
 - `AdsServiceImpl#21` -> Por defecto, se ordena ascendente, así que los primeros anuncios serían los menos relevantes. Habría que usar `reverseOrder()`.
 - `AdsServiceImpl#calculateScore()` -> Siguiendo el enfoque DDD, toda la lógica del cálculo de la puntuación de un anuncio podría incluirse dentro de la clase `Ad`. De esta manera, el propio anuncio sería responsable de calcular su puntuación. Creo que sería más fácil de entender y mantener.
 - `AdsServiceImpl#calculateScore()` -> Trataría de separar en métodos privados las diferentes secciones de puntuación. Por ejemplo: `calculateScoreByPhotos()`, `calculateScoreByDescription()`, etc.
-- `AdsServiceImpl#84` -> Crear el `Optional` ahí mismo para comprobar si es nulo no tiene mucho sentido. O bien se retira el `Optional` y se usa un `if (description != null)` clásico, o se actualiza la
-
-clase `Ad` para que el campo `description` sea un `Optional<String>`.
+- `AdsServiceImpl#84` -> Crear el `Optional` ahí mismo para comprobar si es nulo no tiene mucho sentido. O bien se retira el `Optional` y se usa un `if (description != null)` clásico, o se actualiza laclase `Ad` para que el campo `description` sea un `Optional<String>`.
 - `AdsServiceImpl#86` -> Si mantenemos el `Optional`, se pueden fusionar este `if` y el de la `#89`.
 - `AdsServiceImpl#93` -> Podríamos almacenar en una variable la cantidad de palabras para evitar llamar constantemente al método `size()`. Además, cambiaría `wds` a `words`.
 - `AdsServiceImpl#99` -> Con un `else if` nos evitamos que los flujos que cumplan la condición anterior intenten volver a entrar por la condición de aquí.
